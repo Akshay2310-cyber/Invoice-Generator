@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Generator Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body.dark-mode {
+            background-color: #000;
+            color: #e2e8f0;
+        }
+        body.dark-mode input,
+        body.dark-mode textarea {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+
+    <div class="flex justify-center mb-10">
+        <img src="/Users/akshayms/gotyolo-test/gotyolo/static/images/logobg.svg" alt="Logo" class="w-30 h-10">
+    </div>
+
+    <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold">Enter Invoice Details</h2>
+            <button id="darkModeToggle" class="bg-black dark:bg-gray-900 text-white p-2 rounded">Dark Mode</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="pr-2">
+                <label class="block mb-1">Client Name:</label>
+                <input type="text" id="clientName" class="w-full border p-2">
+
+                <label class="block mb-1">Invoice Number:</label>
+                <input type="text" id="invoiceNumber" class="w-full border p-2">
+
+                <label class="block mb-1">Date of Issue:</label>
+                <input type="date" id="dateOfIssue" class="w-full border p-2">
+
+                <label class="block mb-1">Trip Description:</label>
+                <textarea id="tripDescription" class="w-full border p-2"></textarea>
+
+                <label class="block mb-1">PAX:</label>
+                <input type="number" id="pax" class="w-full border p-2">
+
+                <label class="block mb-1">Reference Number:</label>
+                <input type="text" id="referenceNumber" class="w-full border p-2">
+
+                <label class="block mb-1">City:</label>
+                <input type="text" id="city" class="w-full border p-2">
+
+                <label class="block mb-1">State:</label>
+                <input type="text" id="state" class="w-full border p-2">
+
+                <label class="block mb-1">State Code:</label>
+                <input type="text" id="stateCode" class="w-full border p-2">
+
+                <label class="block mb-1">Email:</label>
+                <input type="email" id="email" class="w-full border p-2">
+
+                <label class="block mb-1">Phone:</label>
+                <input type="tel" id="phone" class="w-full border p-2">
+
+                
+            </div>
+            <div class="pl-2">
+                <label class="block mb-1">TCS (5%):</label>
+                <input type="number" id="tcs" class="w-full border p-2">
+
+                <label class="block mb-1">CGST (2.5%):</label>
+                <input type="number" id="cgst" class="w-full border p-2">
+
+                <label class="block mb-1">SGST (2.5%):</label>
+                <input type="number" id="sgst" class="w-full border p-2">
+
+                <label class="block mb-1">Land Package Total:</label>
+                <input type="number" id="landPackageTotal" class="w-full border p-2">
+
+                <label class="block mb-1">International Flights:</label>
+                <input type="number" id="internationalFlights" class="w-full border p-2">
+
+                <label class="block mb-1">Domestic Flights:</label>
+                <input type="number" id="domesticFlights" class="w-full border p-2">
+
+                <label class="block mb-1">Amount Yet to Pay:</label>
+                <input type="number" id="amountYetToPay" class="w-full border p-2">
+
+                <label class="block mb-1">Total Cost:</label>
+                <input type="number" id="totalCost" class="w-full border p-2">
+
+                <label class="block mb-1">Air Package Total Cost:</label>
+                <input type="number" id="airPackageTotalCost" class="w-full border p-2">
+
+                <label class="block mb-1">Invoice Value in Words:</label>
+                <input type="text" id="invoiceValueWords" class="w-full border p-2">
+
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <button id="generateInvoice" class="bg-red-500 text-white p-3 mt-12 rounded">Generate Invoice</button>
+        </div>
+    </div>
+
+    <div id="invoiceContainer">
+        </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
