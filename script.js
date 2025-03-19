@@ -13,12 +13,9 @@ document.getElementById('generateInvoice').addEventListener('click', function() 
   const email = document.getElementById('email').value;
   const phone = document.getElementById('phone').value;
   const landPackageTotal = document.getElementById('landPackageTotal').value;
-  const airPackageAmountPaid = document.getElementById('airPackageAmountPaid').value;
   const airPackageTotalCost = document.getElementById('airPackageTotalCost').value;
   const referenceNumber = document.getElementById('referenceNumber').value;
   const invoiceValueWords = document.getElementById('invoiceValueWords').value;
-
-  const airPackageAmountYetToPay = airPackageTotalCost - airPackageAmountPaid;
   const formattedDate = new Date(dateOfIssue).toLocaleDateString('en-GB');
 
   const invoiceHTML = `
